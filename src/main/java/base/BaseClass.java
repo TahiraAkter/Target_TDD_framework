@@ -18,9 +18,10 @@ public class BaseClass {
 	@BeforeMethod 
 	public void setUp() { 
 		driver = localDriver("chrome");
-		driver.get(readConfigFile.getConfiguration("url"));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Integer.parseInt(readConfigFile.getConfiguration("pageLoadWait"))));
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(readConfigFile.getConfiguration("implicitWait"))));
+		driver.get(readConfigFile.getReadConfigFile("url"));
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Integer.parseInt(readConfigFile.getReadConfigFile("pageLoadWait"))));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(readConfigFile.getReadConfigFile("implicitWait"))));
 
 	}
 
@@ -39,7 +40,7 @@ public class BaseClass {
 
 	}
 
-	public WebDriver getDriver() {
+	protected WebDriver getDriver() {
 		return driver;
 	}
 
