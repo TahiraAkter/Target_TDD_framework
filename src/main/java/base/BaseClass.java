@@ -7,22 +7,30 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import common.Commons;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import objects.HomePage;
 import utils.ReadConfigFile;
 
 public class BaseClass {
 
 	public ReadConfigFile readConfigFile = new ReadConfigFile(null);
-	WebDriver driver; 
+	WebDriver driver;
 
-	@BeforeMethod 
-	public void setUp() { 
+	protected Commons commons;
+	protected HomePage homePage;
+
+	@BeforeMethod
+	public void setUp() {
 		driver = localDriver("chrome");
 		driver.get(readConfigFile.getReadConfigFile("url"));
 		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Integer.parseInt(readConfigFile.getReadConfigFile("pageLoadWait"))));
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(readConfigFile.getReadConfigFile("implicitWait"))));
-
+		driver.manage().timeouts().pageLoadTimeout(
+				Duration.ofSeconds(Integer.parseInt(readConfigFile.getReadConfigFile("pageLoadWait"))));
+		driver.manage().timeouts()
+				.implicitlyWait(Duration.ofSeconds(Integer.parseInt(readConfigFile.getReadConfigFile("implicitWait"))));
+		initClasses();
 	}
 
 	private WebDriver localDriver(String browserName) {
@@ -42,6 +50,11 @@ public class BaseClass {
 
 	protected WebDriver getDriver() {
 		return driver;
+	}
+
+	private void initClasses() {
+		commons = new Commons();
+		homePage = new HomePage(driver, commons);
 	}
 
 	@AfterMethod
