@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import common.Commons;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import objects.HomePage;
+import objects.SignInToYourTargetAccount;
 import utils.ReadConfigFile;
 
 public class BaseClass {
@@ -20,6 +21,7 @@ public class BaseClass {
 
 	protected Commons commons;
 	protected HomePage homePage;
+	protected SignInToYourTargetAccount signInToYourTargetAccount;
 
 	@BeforeMethod
 	public void setUp() {
@@ -55,6 +57,7 @@ public class BaseClass {
 	private void initClasses() {
 		commons = new Commons();
 		homePage = new HomePage(driver, commons);
+		signInToYourTargetAccount = new SignInToYourTargetAccount(driver, commons);
 	}
 
 	@AfterMethod

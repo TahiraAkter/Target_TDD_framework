@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-RegressionSuite" class="navigator-link">
-              <span class="suite-name border-failed">RegressionSuite</span>
+              <span class="suite-name border-passed">RegressionSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-RegressionSuite" class="hide-methods failed suite-RegressionSuite"> (hide)</a> <!-- hide-methods failed suite-RegressionSuite -->
-                      <a href="#" panel-name="suite-RegressionSuite" class="show-methods failed suite-RegressionSuite"> (show)</a> <!-- show-methods failed suite-RegressionSuite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-RegressionSuite" class="hide-methods passed suite-RegressionSuite"> (hide)</a> <!-- hide-methods passed suite-RegressionSuite -->
+                      <a href="#" panel-name="suite-RegressionSuite" class="show-methods passed suite-RegressionSuite"> (show)</a> <!-- show-methods passed suite-RegressionSuite -->
                     </span>
-                    <div class="method-list-content failed suite-RegressionSuite">
+                    <div class="method-list-content passed suite-RegressionSuite">
                       <span>
-                        <img src="failed.png" width="3%"/>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-RegressionSuite" title="com.target.qa.test.signIn.SignInTestClass" class="method navigator-link" hash-for-method="signIn">signIn</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-RegressionSuite -->
+                    </div> <!-- method-list-content passed suite-RegressionSuite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,9 +117,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-RegressionSuite" class="panel RegressionSuite">
-          <div class="suite-RegressionSuite-class-failed">
+          <div class="suite-RegressionSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.target.qa.test.signIn.SignInTestClass</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -128,42 +128,10 @@
                   <a name="signIn">
                   </a> <!-- signIn -->
                   <span class="method-name">signIn</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=103.0.5060.134)
-Build info: version: &apos;4.2.2&apos;, revision: &apos;683ccb65d6&apos;
-System info: host: &apos;DESKTOP-O3KMR4H&apos;, ip: &apos;192.168.1.181&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3be4573fdab2ab4d713693c425c28e1f, findElement {using=xpath, value=//input[@id=&apos;username&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.134, chrome: {chromedriverVersion: 103.0.5060.134 (8ec6fce403b..., userDataDir: C:\Users\Tahira\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:53111}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53111/devtoo..., se:cdpVersion: 103.0.5060.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3be4573fdab2ab4d713693c425c28e1f
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:588)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:406)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:398)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at jdk.proxy2/jdk.proxy2.$Proxy16.toString(Unknown Source)
-	at java.base/java.lang.String.valueOf(String.java:4215)
-	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
-	at common.Commons.inputValues(Commons.java:28)
-	at objects.HomePage.inputEmail(HomePage.java:40)
-	at objects.HomePage.homePageSteps(HomePage.java:50)
-	at com.target.qa.test.signIn.SignInTestClass.signIn(SignInTestClass.java:12)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-RegressionSuite-class-failed -->
+          </div> <!-- suite-RegressionSuite-class-passed -->
         </div> <!-- panel RegressionSuite -->
         <div panel-name="test-xml-RegressionSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -220,12 +188,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'signIn')
 data.setCell(0, 2, 'com.target.qa.test.signIn.SignInTestClass')
-data.setCell(0, 3, 18522);
+data.setCell(0, 3, 20981);
 window.suiteTableData['RegressionSuite']= { tableData: data, tableDiv: 'times-div-RegressionSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 18 seconds</span>
+              <span class="suite-total-time">Total running time: 20 seconds</span>
               <div id="times-div-RegressionSuite">
               </div> <!-- times-div-RegressionSuite -->
             </div> <!-- times-div -->
@@ -239,8 +207,15 @@ return data;
             <div class="reporter-method-div">
               <span class="reporter-method-name">signIn</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (3be4573fdab2ab4d713693c425c28e1f)] -> xpath: //span[text()='Sign in']] This element has been clicked</span>
-                <span class="reporter-method-output">Proxy element for: DefaultElementLocator 'By.xpath: //span[starts-with(@class, 'styles__ListItemText-sc-5oc0g9-1') and text()='Sign in']' This element has been clicked</span>
+                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (9ccc0077f5a12d400074fe59d7d7b39f)] -> xpath: //span[text()='Sign in']] This element has been clicked<br></span>
+                <span class="reporter-method-output">Proxy element for: DefaultElementLocator 'By.xpath: //span[starts-with(@class, 'styles__ListItemText-sc-5oc0g9-1') and text()='Sign in']' This element has been clicked<br></span>
+                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (9ccc0077f5a12d400074fe59d7d7b39f)] -> xpath: //span[text()='Sign into your Target account']] :has value---->Sign into your Target account<br></span>
+                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (9ccc0077f5a12d400074fe59d7d7b39f)] -> xpath: //span[text()='Sign into your Target account']] :has value---->Sign into your Target account<br></span>
+                <span class="reporter-method-output">Current Url is: https://www.target.com/login?client_id=ecom-web-1.0.0&ui_namespace=ui-default&back_button_action=browser&keep_me_signed_in=true&kmsi_default=false&actions=create_session_signin<br></span>
+                <span class="reporter-method-output">Current Url is: https://www.target.com/login?client_id=ecom-web-1.0.0&ui_namespace=ui-default&back_button_action=browser&keep_me_signed_in=true&kmsi_default=false&actions=create_session_signin<br></span>
+                <span class="reporter-method-output">abcd@gmail.com : This value has been passed through this [[ChromeDriver: chrome on WINDOWS (9ccc0077f5a12d400074fe59d7d7b39f)] -> xpath: //input[@name='username']]<br></span>
+                <span class="reporter-method-output">987453#$! : This value has been passed through this [[ChromeDriver: chrome on WINDOWS (9ccc0077f5a12d400074fe59d7d7b39f)] -> css selector: input#password]<br></span>
+                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (9ccc0077f5a12d400074fe59d7d7b39f)] -> xpath: //span[text()='Sign in']] This element has been clicked<br></span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -264,14 +239,12 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">signIn</span>
-                <span class="method-start">15077 ms</span>
+                <span class="method-start">30824 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">terminate</span>
-                <span class="method-start">33617 ms</span>
+                <span class="method-start">51821 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

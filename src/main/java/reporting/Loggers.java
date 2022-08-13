@@ -13,7 +13,7 @@ public class Loggers {
 
 		logger.log(Level.INFO, msg);// this is from Java Console Log//It will show some INFO and msg
 
-		Reporter.log(msg);// TestNG Reporter log
+		Reporter.log(msg + "<br>");// TestNG Reporter log
 	}
 
 }

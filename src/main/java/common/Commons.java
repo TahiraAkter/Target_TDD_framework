@@ -1,6 +1,8 @@
 package common;
 
 import java.util.NoSuchElementException;
+
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import reporting.Loggers;
@@ -17,9 +19,18 @@ public class Commons {
 			e.printStackTrace();
 			Loggers.getLog(element + " : This element is not found");
 			Assert.fail();
-
 		}
+	}
 
+	public String getText(WebElement element) {
+		String valueString = null;
+		try {
+			valueString = element.getText();
+			Loggers.getLog(element + " :has value---->" + valueString);
+		} catch (NullPointerException | NoSuchElementException e) {
+			e.printStackTrace();
+		}
+		return valueString;
 	}
 
 	public void inputValues(WebElement element, String value) {
@@ -32,6 +43,12 @@ public class Commons {
 			Assert.fail();
 
 		}
+	}
+
+	public String getCurrentUrl(WebDriver driver) {
+		Loggers.getLog("Current Url is: " + driver.getCurrentUrl());
+		return driver.getCurrentUrl();
+
 	}
 
 }

@@ -16,17 +16,11 @@ public class HomePage {
 		this.commons = commons;
 	}
 
-	@FindBy(xpath =   "//span[text()='Sign in']")
+	@FindBy(xpath = "//span[text()='Sign in']")
 	WebElement signInElement1;
 
 	@FindBy(xpath = "//span[starts-with(@class, 'styles__ListItemText-sc-5oc0g9-1') and text()='Sign in']")
 	WebElement signInElement2;
-
-	@FindBy(xpath =  "//input[@id='username']")
-	WebElement emailElement;
-
-	@FindBy(css = "input#password")
-	WebElement passwordElement;
 
 	private void clickSignIn1() {
 		commons.click(signInElement1);
@@ -36,19 +30,9 @@ public class HomePage {
 		commons.click(signInElement2);
 	}
 
-	private void inputEmail(String value) {
-		commons.inputValues(emailElement, value);
-	}
-
-	private void inputPassword(String value) {
-		commons.inputValues(passwordElement, value);
-	}
-
-	public void homePageSteps(String value1, String value2) {
+	public void homePageSteps() {
 		clickSignIn1();
 		clickSignIn2();
-		inputEmail(value1);
-		inputPassword(value2);
 
 	}
 
