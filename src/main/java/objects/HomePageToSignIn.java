@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import common.Commons;
 
-public class HomePage {
+public class HomePageToSignIn {
 
 	Commons commons;
 
-	public HomePage(WebDriver driver, Commons commons) {
+	 public HomePageToSignIn (WebDriver driver, Commons commons) {
 		PageFactory.initElements(driver, this);
 		this.commons = commons;
 	}
@@ -30,7 +30,7 @@ public class HomePage {
 		commons.click(signInElement2);
 	}
 
-	public void homePageSteps() {
+	public void homePageSignInSteps() {
 		clickSignIn1();
 		clickSignIn2();
 
