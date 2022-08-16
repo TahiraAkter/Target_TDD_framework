@@ -4,7 +4,7 @@ import base.BaseClass;
 
 public class SignInTestClass extends BaseClass {
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void signIn() {
 		homePageToSignIn.homePageSignInSteps();
 		signIn.signInToYourTargetAccountSteps("Sign into your Target account",

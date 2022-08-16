@@ -3,7 +3,7 @@
 <suite name="RegressionSuite">
 	<test thread-count="5" name="Test">
 		<classes>
-			<!--class name="com.target.qa.test.signIn.SignInTestClass" /-->
+			<class name="com.target.qa.test.signIn.SignInTestClass" />
 			<class name="com.target.qa.test.categories.CategoriesTestClass" />
 		</classes>
 	</test> <!-- Test -->

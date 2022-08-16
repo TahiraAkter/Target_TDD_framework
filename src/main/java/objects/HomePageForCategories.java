@@ -23,6 +23,9 @@ public class HomePageForCategories {
 	
 	@FindBy(xpath = "//span[text()='College']")
 	WebElement collegElement;
+	
+	@FindBy(xpath = "//span[text()='Dorm Must Haves']")
+	WebElement dormMustHavesElement;
 
 	private void clickCategories() {
 		commons.click(categoriesElement);
@@ -31,10 +34,14 @@ public class HomePageForCategories {
 	private void clickCollege() {
 		commons.click(collegElement);
 	}
+	private void clickDormMustHaves() {
+		commons.click(dormMustHavesElement);
+	}
 
 	public void homePageCategoriesSteps() {
 		clickCategories();
 		clickCollege();
+		clickDormMustHaves();
 	}
 
 }

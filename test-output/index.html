@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-RegressionSuite" class="navigator-link">
-              <span class="suite-name border-passed">RegressionSuite</span>
+              <span class="suite-name border-failed">RegressionSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-RegressionSuite" class="hide-methods passed suite-RegressionSuite"> (hide)</a> <!-- hide-methods passed suite-RegressionSuite -->
-                      <a href="#" panel-name="suite-RegressionSuite" class="show-methods passed suite-RegressionSuite"> (show)</a> <!-- show-methods passed suite-RegressionSuite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-RegressionSuite" class="hide-methods failed suite-RegressionSuite"> (hide)</a> <!-- hide-methods failed suite-RegressionSuite -->
+                      <a href="#" panel-name="suite-RegressionSuite" class="show-methods failed suite-RegressionSuite"> (show)</a> <!-- show-methods failed suite-RegressionSuite -->
                     </span>
-                    <div class="method-list-content passed suite-RegressionSuite">
+                    <div class="method-list-content failed suite-RegressionSuite">
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-RegressionSuite" title="com.target.qa.test.categories.CategoriesTestClass" class="method navigator-link" hash-for-method="getCategories">getCategories</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-RegressionSuite -->
+                    </div> <!-- method-list-content failed suite-RegressionSuite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,9 +117,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-RegressionSuite" class="panel RegressionSuite">
-          <div class="suite-RegressionSuite-class-passed">
+          <div class="suite-RegressionSuite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.target.qa.test.categories.CategoriesTestClass</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -128,10 +128,17 @@
                   <a name="getCategories">
                   </a> <!-- getCategories -->
                   <span class="method-name">getCategories</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Dorm Must Haves] but found [bedding sheets : Dorm Bedding]
+	at objects.DormBedding.getTitle(DormBedding.java:27)
+	at objects.DormBedding.dormBeddingSteps(DormBedding.java:42)
+	at com.target.qa.test.categories.CategoriesTestClass.getCategories(CategoriesTestClass.java:12)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-RegressionSuite-class-passed -->
+          </div> <!-- suite-RegressionSuite-class-failed -->
         </div> <!-- panel RegressionSuite -->
         <div panel-name="test-xml-RegressionSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -144,6 +151,7 @@
 &lt;suite name=&quot;RegressionSuite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
+      &lt;class name=&quot;com.target.qa.test.signIn.SignInTestClass&quot;/&gt;
       &lt;class name=&quot;com.target.qa.test.categories.CategoriesTestClass&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
@@ -158,7 +166,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">Test (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -188,12 +196,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'getCategories')
 data.setCell(0, 2, 'com.target.qa.test.categories.CategoriesTestClass')
-data.setCell(0, 3, 3978);
+data.setCell(0, 3, 4587);
 window.suiteTableData['RegressionSuite']= { tableData: data, tableDiv: 'times-div-RegressionSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 4 seconds</span>
               <div id="times-div-RegressionSuite">
               </div> <!-- times-div-RegressionSuite -->
             </div> <!-- times-div -->
@@ -207,17 +215,31 @@ return data;
             <div class="reporter-method-div">
               <span class="reporter-method-name">getCategories</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (7f4bfa3cc9d21a6148a28db58c648659)] -> xpath: //a[text()='Categories']] This element has been clicked<br></span>
-                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (7f4bfa3cc9d21a6148a28db58c648659)] -> xpath: //span[text()='College']] This element has been clicked<br></span>
+                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (c7c3a39756914f8c7e941fad29cd940c)] -> xpath: //a[text()='Categories']] This element has been clicked<br></span>
+                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (c7c3a39756914f8c7e941fad29cd940c)] -> xpath: //span[text()='College']] This element has been clicked<br></span>
+                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (c7c3a39756914f8c7e941fad29cd940c)] -> xpath: //span[text()='Dorm Must Haves']] This element has been clicked<br></span>
+                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (c7c3a39756914f8c7e941fad29cd940c)] -> xpath: //h1[text()='Dorm Must Haves']] :has value---->Dorm Must Haves<br></span>
+                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (c7c3a39756914f8c7e941fad29cd940c)] -> xpath: //h1[text()='Dorm Must Haves']] :has value---->Dorm Must Haves<br></span>
+                <span class="reporter-method-output">Current Url is: https://www.target.com/c/dorm-must-haves/-/N-vwnyd<br></span>
+                <span class="reporter-method-output">Current Url is: https://www.target.com/c/dorm-must-haves/-/N-vwnyd<br></span>
+                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (c7c3a39756914f8c7e941fad29cd940c)] -> xpath: //h1[text()='Dorm Must Haves']] This element has been clicked<br></span>
+                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (c7c3a39756914f8c7e941fad29cd940c)] -> css selector: div.styles__HeadingContainer-sc-4tej7h-0.hVEHfS] :has value---->Dorm Must Haves<br></span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-RegressionSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.target.qa.test.signIn.SignInTestClass</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">signIn</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-RegressionSuite" class="panel">
@@ -232,12 +254,14 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">getCategories</span>
-                <span class="method-start">17980 ms</span>
+                <span class="method-start">12919 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">terminate</span>
-                <span class="method-start">21977 ms</span>
+                <span class="method-start">17512 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

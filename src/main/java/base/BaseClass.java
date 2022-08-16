@@ -9,6 +9,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import common.Commons;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import objects.DormBedding;
+import objects.DormMustHaves;
 import objects.HomePageForCategories;
 import objects.HomePageToSignIn;
 import objects.SignInToYourTargetAccount;
@@ -23,6 +25,8 @@ public class BaseClass {
 	protected HomePageToSignIn homePageToSignIn;
 	protected SignInToYourTargetAccount signIn;
 	protected HomePageForCategories categories;
+	protected DormMustHaves dorms;
+	protected DormBedding bedding;
 
 	@BeforeMethod
 	public void setUp() {
@@ -60,11 +64,13 @@ public class BaseClass {
 		homePageToSignIn = new HomePageToSignIn(driver, commons);
 		signIn = new SignInToYourTargetAccount(driver, commons);
 		categories = new HomePageForCategories(driver, commons);
+		dorms = new DormMustHaves(driver, commons);
+		bedding= new DormBedding(driver, commons);
 	}
 
 	@AfterMethod
 	public void terminate() {
-		//driver.quit();
+		driver.quit();
 	}
 
 }
