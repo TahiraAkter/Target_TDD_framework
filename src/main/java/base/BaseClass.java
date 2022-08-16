@@ -64,7 +64,7 @@ public class BaseClass {
 
 	@AfterMethod
 	public void terminate() {
-		driver.quit();
+		//driver.quit();
 	}
 
 }

@@ -1,9 +1,9 @@
 package common;
 
-
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import reporting.Loggers;
 
@@ -51,4 +51,17 @@ public class Commons {
 
 	}
 
+	public void selectByVisibleText(WebElement element, String value) {
+		try {
+			Select select = new Select(element);
+			select.selectByVisibleText(value);
+			Loggers.getLog(value + " : This value has been passed through this " + element);
+		} catch (NullPointerException | NoSuchElementException e) {
+			e.printStackTrace();
+			Loggers.getLog(element + " :This element is not found");
+			Assert.fail();
+
+		}
+
+	}
 }

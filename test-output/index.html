@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-RegressionSuite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-RegressionSuite" title="com.target.qa.test.signIn.SignInTestClass" class="method navigator-link" hash-for-method="signIn">signIn</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-RegressionSuite" title="com.target.qa.test.categories.CategoriesTestClass" class="method navigator-link" hash-for-method="getCategories">getCategories</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-RegressionSuite -->
@@ -120,14 +120,14 @@
           <div class="suite-RegressionSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.target.qa.test.signIn.SignInTestClass</span>
+              <span class="class-name">com.target.qa.test.categories.CategoriesTestClass</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="signIn">
-                  </a> <!-- signIn -->
-                  <span class="method-name">signIn</span>
+                  <a name="getCategories">
+                  </a> <!-- getCategories -->
+                  <span class="method-name">getCategories</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -144,7 +144,7 @@
 &lt;suite name=&quot;RegressionSuite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.target.qa.test.signIn.SignInTestClass&quot;/&gt;
+      &lt;class name=&quot;com.target.qa.test.categories.CategoriesTestClass&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- RegressionSuite --&gt;
@@ -186,14 +186,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'signIn')
-data.setCell(0, 2, 'com.target.qa.test.signIn.SignInTestClass')
-data.setCell(0, 3, 20981);
+data.setCell(0, 1, 'getCategories')
+data.setCell(0, 2, 'com.target.qa.test.categories.CategoriesTestClass')
+data.setCell(0, 3, 3978);
 window.suiteTableData['RegressionSuite']= { tableData: data, tableDiv: 'times-div-RegressionSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 20 seconds</span>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
               <div id="times-div-RegressionSuite">
               </div> <!-- times-div-RegressionSuite -->
             </div> <!-- times-div -->
@@ -205,17 +205,10 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">signIn</span>
+              <span class="reporter-method-name">getCategories</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (9ccc0077f5a12d400074fe59d7d7b39f)] -> xpath: //span[text()='Sign in']] This element has been clicked<br></span>
-                <span class="reporter-method-output">Proxy element for: DefaultElementLocator 'By.xpath: //span[starts-with(@class, 'styles__ListItemText-sc-5oc0g9-1') and text()='Sign in']' This element has been clicked<br></span>
-                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (9ccc0077f5a12d400074fe59d7d7b39f)] -> xpath: //span[text()='Sign into your Target account']] :has value---->Sign into your Target account<br></span>
-                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (9ccc0077f5a12d400074fe59d7d7b39f)] -> xpath: //span[text()='Sign into your Target account']] :has value---->Sign into your Target account<br></span>
-                <span class="reporter-method-output">Current Url is: https://www.target.com/login?client_id=ecom-web-1.0.0&ui_namespace=ui-default&back_button_action=browser&keep_me_signed_in=true&kmsi_default=false&actions=create_session_signin<br></span>
-                <span class="reporter-method-output">Current Url is: https://www.target.com/login?client_id=ecom-web-1.0.0&ui_namespace=ui-default&back_button_action=browser&keep_me_signed_in=true&kmsi_default=false&actions=create_session_signin<br></span>
-                <span class="reporter-method-output">abcd@gmail.com : This value has been passed through this [[ChromeDriver: chrome on WINDOWS (9ccc0077f5a12d400074fe59d7d7b39f)] -> xpath: //input[@name='username']]<br></span>
-                <span class="reporter-method-output">987453#$! : This value has been passed through this [[ChromeDriver: chrome on WINDOWS (9ccc0077f5a12d400074fe59d7d7b39f)] -> css selector: input#password]<br></span>
-                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (9ccc0077f5a12d400074fe59d7d7b39f)] -> xpath: //span[text()='Sign in']] This element has been clicked<br></span>
+                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (7f4bfa3cc9d21a6148a28db58c648659)] -> xpath: //a[text()='Categories']] This element has been clicked<br></span>
+                <span class="reporter-method-output">[[ChromeDriver: chrome on WINDOWS (7f4bfa3cc9d21a6148a28db58c648659)] -> xpath: //span[text()='College']] This element has been clicked<br></span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -233,18 +226,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.target.qa.test.signIn.SignInTestClass</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.target.qa.test.categories.CategoriesTestClass</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">signIn</span>
-                <span class="method-start">30824 ms</span>
+                <span class="method-name">getCategories</span>
+                <span class="method-start">17980 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">terminate</span>
-                <span class="method-start">51821 ms</span>
+                <span class="method-start">21977 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -3,13 +3,13 @@
 <suite name="Failed suite [RegressionSuite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.target.qa.test.signIn.SignInTestClass">
+      <class name="com.target.qa.test.categories.CategoriesTestClass">
         <methods>
+          <include name="getCategories"/>
           <include name="terminate"/>
-          <include name="signIn"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.target.qa.test.signIn.SignInTestClass -->
+      </class> <!-- com.target.qa.test.categories.CategoriesTestClass -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [RegressionSuite] -->
