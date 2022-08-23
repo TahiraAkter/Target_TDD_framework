@@ -6,14 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import common.Commons;
+import common.CommonFunctions;
 
 public class SignInToYourTargetAccount {
 
 	WebDriver driver;
-	Commons commons;
+	CommonFunctions commons;
 
-	public SignInToYourTargetAccount(WebDriver driver, Commons commons) {
+	public SignInToYourTargetAccount(WebDriver driver, CommonFunctions commons) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 		this.commons = commons;

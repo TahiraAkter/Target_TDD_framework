@@ -5,14 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import common.Commons;
+import common.CommonFunctions;
 
 public class HomePageForCategories {
 	
 	WebDriver driver;
-	Commons commons;
+	CommonFunctions commons;
 
-	public HomePageForCategories(WebDriver driver, Commons commons) {
+	public HomePageForCategories(WebDriver driver, CommonFunctions commons) {
 		PageFactory.initElements(driver, this);
 		this.driver=driver;
 		this.commons = commons;

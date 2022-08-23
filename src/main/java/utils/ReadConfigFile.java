@@ -8,11 +8,11 @@ import java.util.Properties;
 public class ReadConfigFile {
 	
 	private Properties properties;
-	private final String defaultpath = "configuration/configure.properties"; //where
+	private final String defaultPath = "configuration/configure.properties"; //where
 
 	public ReadConfigFile(String path) { 
 		if (path == null || path.length() < 11) {
-			loadProperty(defaultpath);
+			loadProperty(defaultPath);
 		} else {
 			loadProperty(path); 
 		}

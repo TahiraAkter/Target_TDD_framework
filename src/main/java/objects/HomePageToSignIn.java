@@ -5,13 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import common.Commons;
+import common.CommonFunctions;
 
 public class HomePageToSignIn {
 
-	Commons commons;
+	CommonFunctions commons;
 
-	 public HomePageToSignIn (WebDriver driver, Commons commons) {
+	 public HomePageToSignIn (WebDriver driver, CommonFunctions commons) {
 		PageFactory.initElements(driver, this);
 		this.commons = commons;
 	}

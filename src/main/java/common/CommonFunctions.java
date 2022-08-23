@@ -5,16 +5,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+
 import reporting.Loggers;
 
-public class Commons {
+public class CommonFunctions {
+	WebDriver driver;
+	CommonWaits waits;
 
-	public void click(WebElement element) {// to inputValue, we need 2 parameters: element, and value
+	public CommonFunctions(WebDriver driver, CommonWaits waits) {
+		this.driver = driver;
+		this.waits = waits;
+	}
+
+	public void click(WebElement element) {
 
 		try {
+			waits.waitUntilClickable(element);
 			element.click();// this element we get from the runtime
 			// this is called dynamic approach. We can pass any element and any value
-			Loggers.getLog(element + " This element has been clicked");
+			Loggers.getLog(" This element has been clicked"+ element);
 		} catch (NullPointerException | NoSuchElementException e) {
 			e.printStackTrace();
 			Loggers.getLog(element + " : This element is not found");
@@ -33,7 +42,8 @@ public class Commons {
 		return valueString;
 	}
 
-	public void inputValues(WebElement element, String value) {
+	public void inputValues(WebElement element, String value) {// to inputValue, we need 2 parameters: element, and
+																// value
 		try {
 			element.sendKeys(value);
 			Loggers.getLog(value + " : This value has been passed through this " + element);
@@ -62,6 +72,40 @@ public class Commons {
 			Assert.fail();
 
 		}
+		
 
 	}
+	public boolean buttonEnabled(WebElement element) {
+		boolean button = false;
+		try {
+			button = element.isEnabled();
+			Loggers.getLog(element + " ---> This element is enabled : " + button);
+		} catch (NullPointerException | NoSuchElementException e) {
+			e.printStackTrace();
+			Loggers.getLog(element + " : This element Not Found");
+			Assert.fail();
+		}
+		return button;
+		}
+	
+	public boolean isDisplayed(WebElement element) {
+		boolean logo = false;
+		try {
+			logo = element.isDisplayed();
+			Loggers.getLog(element + " ---> This element is displayed : " + logo);
+		} catch (NullPointerException | NoSuchElementException e) {
+			e.printStackTrace();
+			Loggers.getLog(element + " : This element Not Found");
+			Assert.fail();
+		}
+		return logo;
+	}
+
+
+	/*
+	 * public void scrollPageDown(WebElement element, WebDriver driver, String
+	 * value) { JavascriptExecutor jse=(JavascriptExecutor)driver;
+	 * jse.executeScript(value); }
+	 */
+
 }
