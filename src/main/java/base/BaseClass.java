@@ -37,7 +37,7 @@ public class BaseClass {
     @Parameters("browser")
 	@BeforeMethod
 	public void setUp(String browser1) {
-		driver = localDriver("browser1");
+		driver = localDriver(browser1);
 		driver.get(readConfigFile.getReadConfigFile("url"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(
@@ -84,7 +84,7 @@ public class BaseClass {
 
 	@AfterMethod
 	public void terminate() {
-		driver.quit();
+		//driver.quit();
 	}
 
 }

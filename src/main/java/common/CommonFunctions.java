@@ -1,5 +1,6 @@
 package common;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,7 +24,7 @@ public class CommonFunctions {
 			waits.waitUntilClickable(element);
 			element.click();// this element we get from the runtime
 			// this is called dynamic approach. We can pass any element and any value
-			Loggers.getLog(" This element has been clicked"+ element);
+			Loggers.getLog(" This element has been clicked" + element);
 		} catch (NullPointerException | NoSuchElementException e) {
 			e.printStackTrace();
 			Loggers.getLog(element + " : This element is not found");
@@ -72,40 +73,12 @@ public class CommonFunctions {
 			Assert.fail();
 
 		}
-		
 
 	}
-	public boolean buttonEnabled(WebElement element) {
-		boolean button = false;
-		try {
-			button = element.isEnabled();
-			Loggers.getLog(element + " ---> This element is enabled : " + button);
-		} catch (NullPointerException | NoSuchElementException e) {
-			e.printStackTrace();
-			Loggers.getLog(element + " : This element Not Found");
-			Assert.fail();
-		}
-		return button;
-		}
-	
-	public boolean isDisplayed(WebElement element) {
-		boolean logo = false;
-		try {
-			logo = element.isDisplayed();
-			Loggers.getLog(element + " ---> This element is displayed : " + logo);
-		} catch (NullPointerException | NoSuchElementException e) {
-			e.printStackTrace();
-			Loggers.getLog(element + " : This element Not Found");
-			Assert.fail();
-		}
-		return logo;
+
+	public void scrollPageDown() {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,250)");
 	}
-
-
-	/*
-	 * public void scrollPageDown(WebElement element, WebDriver driver, String
-	 * value) { JavascriptExecutor jse=(JavascriptExecutor)driver;
-	 * jse.executeScript(value); }
-	 */
 
 }
