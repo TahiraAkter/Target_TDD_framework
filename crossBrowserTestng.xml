@@ -20,8 +20,6 @@
 	<test thread-count="5" name="EdgeTest">
 		<parameter name="browser" value="edge"></parameter>
 		<classes>
-			<class name="base.BaseClass" />
-			<class name="com.target.qa.test.categories.CategoriesTestClass" />
 			<class name="com.target.qa.test.signIn.SignInTestClass" />
 		</classes>
 	</test> <!-- Test -->
