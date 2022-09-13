@@ -8,12 +8,12 @@ import org.openqa.selenium.support.PageFactory;
 import common.CommonFunctions;
 import common.CommonWaits;
 
-public class DormMustHaves {
+public class SheetsPillowcases {
 	WebDriver driver;
 	CommonFunctions commons;
 	CommonWaits waits;
 
-	public DormMustHaves(WebDriver driver, CommonFunctions commons, CommonWaits waits) {
+	public SheetsPillowcases(WebDriver driver, CommonFunctions commons, CommonWaits waits) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 		this.commons = commons;
@@ -21,10 +21,10 @@ public class DormMustHaves {
 
 	}
 
-	@FindBy(xpath = "//h1[text()='Dorm Must Haves']")
+	@FindBy(xpath = "//h1[contains(@class, 'Heading__StyledHeading')]")
 	WebElement titleElement;
 
-	@FindBy(xpath = "//div/h2[contains(.,'Sheet')]")
+	@FindBy(xpath = "//div/picture/img[contains(@alt, '400 Thread Count Solid Performance Sheet Set')]")
 	WebElement sheetsElement;
 
 	// "//span[text()='Sheets']"
@@ -45,7 +45,7 @@ public class DormMustHaves {
 
 	}
 
-	public void dormMustHavePageSteps(String expectedValue, String expectedUrl) {
+	public void sheetsPillowcasesPageSteps(String expectedValue, String expectedUrl) {
 		getTitle(expectedValue);
 		getUrl(expectedUrl);
 		clickSheets();

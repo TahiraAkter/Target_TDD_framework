@@ -6,42 +6,52 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import common.CommonFunctions;
+import common.CommonWaits;
 
 public class HomePageForCategories {
-	
+
 	WebDriver driver;
 	CommonFunctions commons;
 
 	public HomePageForCategories(WebDriver driver, CommonFunctions commons) {
 		PageFactory.initElements(driver, this);
-		this.driver=driver;
+		this.driver = driver;
 		this.commons = commons;
 	}
 
 	@FindBy(xpath = "//a[text()='Categories']")
 	WebElement categoriesElement;
-	
-	@FindBy(xpath = "//span[text()='College']")
-	WebElement collegElement;
-	
-	@FindBy(xpath = "//span[text()='Dorm Must Haves']")
-	WebElement dormMustHavesElement;
+
+	@FindBy(xpath = "//span[contains(@class, 'CellSkinny') and text()='Home']")
+	WebElement homeElement;
+
+	@FindBy(xpath = "//div[contains(@class,'sc')]/span[text()='Bedding']")
+	WebElement beddingElement;
+
+	@FindBy(xpath = "//span[text()='Sheets & Pillowcases']")
+	WebElement sheetsPillowcaseElement;
 
 	private void clickCategories() {
 		commons.click(categoriesElement);
 	}
 
-	private void clickCollege() {
-		commons.click(collegElement);
+	private void clickHome() {
+		commons.click(homeElement);
 	}
-	private void clickDormMustHaves() {
-		commons.click(dormMustHavesElement);
+
+	private void clickBedding() {
+		commons.click(beddingElement);
+	}
+
+	private void clickSheetsPillowcase() {
+		commons.click(sheetsPillowcaseElement);
 	}
 
 	public void homePageCategoriesSteps() {
 		clickCategories();
-		clickCollege();
-		clickDormMustHaves();
+		clickHome();
+		clickBedding();
+		clickSheetsPillowcase();
 	}
 
 }

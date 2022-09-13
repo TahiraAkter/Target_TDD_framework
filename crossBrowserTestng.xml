@@ -4,16 +4,12 @@
 	<test thread-count="5" name="ChromeTest">
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
-			<class name="base.BaseClass" />
-			<class name="com.target.qa.test.categories.CategoriesTestClass" />
 			<class name="com.target.qa.test.signIn.SignInTestClass" />
 		</classes>
 	</test> <!-- Test -->
 	<test thread-count="5" name="FireFoxTest">
 		<parameter name="browser" value="firefox"></parameter>
 		<classes>
-			<class name="base.BaseClass" />
-			<class name="com.target.qa.test.categories.CategoriesTestClass" />
 			<class name="com.target.qa.test.signIn.SignInTestClass" />
 		</classes>
 	</test> <!-- Test -->

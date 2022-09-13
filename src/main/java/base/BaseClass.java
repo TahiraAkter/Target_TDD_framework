@@ -14,7 +14,7 @@ import common.CommonFunctions;
 import common.CommonWaits;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import objects.DormBedding;
-import objects.DormMustHaves;
+import objects.SheetsPillowcases;
 import objects.HomePageForCategories;
 import objects.HomePageToSignIn;
 import objects.SignInToYourTargetAccount;
@@ -31,8 +31,8 @@ public class BaseClass {
 	protected HomePageToSignIn homePageToSignIn;
 	protected SignInToYourTargetAccount signIn;
 	protected HomePageForCategories categories;
-	protected DormMustHaves dorms;
-	protected DormBedding bedding;
+	protected SheetsPillowcases sheets;
+	//protected DormBedding bedding; 
 	
     @Parameters("browser")
 	@BeforeMethod
@@ -77,8 +77,8 @@ public class BaseClass {
 		homePageToSignIn = new HomePageToSignIn(driver, commons);
 		signIn = new SignInToYourTargetAccount(driver, commons);
 		categories = new HomePageForCategories(driver, commons);
-		dorms = new DormMustHaves(driver, commons, waits);
-		bedding= new DormBedding(driver, commons);
+		sheets = new SheetsPillowcases(driver, commons, waits);
+		//bedding= new DormBedding(driver, commons);
 		
 	}
 
