@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import common.CommonFunctions;
+import utils.SignInData;
 
 public class HomePageToSignIn {
 
@@ -19,7 +20,7 @@ public class HomePageToSignIn {
 	@FindBy(xpath = "//span[text()='Sign in']")
 	WebElement signInElement1;
 
-	@FindBy(xpath = "//span[starts-with(@class, 'styles__ListItemText-sc-5oc0g9-1') and text()='Sign in']")
+	@FindBy(xpath = "//span[contains(@class,'sc-diphzn-1 fVlQrE') and text()='Sign in']")
 	WebElement signInElement2;
 
 	private void clickSignIn1() {
@@ -31,6 +32,11 @@ public class HomePageToSignIn {
 	}
 
 	public void homePageSignInSteps() {
+		clickSignIn1();
+		clickSignIn2();
+
+	}
+	public void homePageSignInSteps(SignInData signInData) {
 		clickSignIn1();
 		clickSignIn2();
 

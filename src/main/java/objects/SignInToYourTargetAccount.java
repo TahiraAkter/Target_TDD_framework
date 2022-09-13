@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import common.CommonFunctions;
+import utils.SignInData;
 
 public class SignInToYourTargetAccount {
 
@@ -53,12 +54,19 @@ public class SignInToYourTargetAccount {
 		commons.click(signInElement);
 	}
 
-	public void signInToYourTargetAccountSteps(String expected, String expectedUrl, String email, String password) {
-		getTitle(expected);
+	public void signInToYourTargetAccountSteps(String expectedTitle, String expectedUrl, String email, String password) {
+		getTitle(expectedTitle);
 		getUrl(expectedUrl);
 		inputEmail(email);
 		inputPassword(password);
 		clickSignIn3();
 
+	}
+	public void signInToYourTargetAccountSteps(SignInData signInData) {
+		getTitle(signInData.getExpectedTitle());
+		getUrl(signInData.getExpectedUrl());
+		inputEmail(signInData.getEmail());
+		inputPassword(signInData.getPassward());
+		clickSignIn3();
 	}
 }
