@@ -9,11 +9,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
-
 import common.CommonFunctions;
 import common.CommonWaits;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import objects.DormBedding;
 import objects.SheetsPillowcases;
 import objects.HomePageForCategories;
 import objects.HomePageToSignIn;
@@ -32,7 +30,6 @@ public class BaseClass {
 	protected SignInToYourTargetAccount signIn;
 	protected HomePageForCategories categories;
 	protected SheetsPillowcases sheets;
-	//protected DormBedding bedding; 
 	
     @Parameters("browser")
 	@BeforeMethod
@@ -78,7 +75,6 @@ public class BaseClass {
 		signIn = new SignInToYourTargetAccount(driver, commons);
 		categories = new HomePageForCategories(driver, commons);
 		sheets = new SheetsPillowcases(driver, commons, waits);
-		//bedding= new DormBedding(driver, commons);
 		
 	}
 
