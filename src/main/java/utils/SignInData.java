@@ -8,7 +8,6 @@ public class SignInData {
 	private String passward;
 	
 	public SignInData(String expectedTitle, String expectedUrl, String email, String passward) {
-		super();
 		this.expectedTitle = expectedTitle;
 		this.expectedUrl = expectedUrl;
 		this.email = email;

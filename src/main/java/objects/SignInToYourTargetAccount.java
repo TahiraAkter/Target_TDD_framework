@@ -32,7 +32,7 @@ public class SignInToYourTargetAccount {
 	@FindBy(xpath = "//span[text()='Sign in']")
 	WebElement signInElement;
 
-	private void getTitle(String expectedValue) {
+	private void getTitle(String expectedValue) { 
 		Assert.assertEquals(expectedValue, commons.getText(titleElement));
 		commons.getText(titleElement);
 	}
