@@ -1,5 +1,7 @@
 package objects;
 
+import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,6 +39,11 @@ public class HomePageToSignIn {
 
 	}
 	public void homePageSignInSteps(SignInData signInData) {
+		clickSignIn1();
+		clickSignIn2();
+
+	}
+	public void homePageSignInSteps(Map<String, String>Map) {
 		clickSignIn1();
 		clickSignIn2();
 

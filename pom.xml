@@ -5,6 +5,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Target Framework</name>
 	<description>One stop shop for everyone</description>
+	<properties>
+		<compilerVersion>1.8</compilerVersion>
+	</properties>
 
 	<dependencies>
 
@@ -12,7 +15,7 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.2.2</version>
+			<version>4.3.0</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -40,6 +43,12 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.2.2</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.9</version>
+		</dependency>
 
 	</dependencies>
 
@@ -48,11 +57,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
+				<version>3.10.0</version>
 				<configuration>
-					<!-- this 1.8 is actually Java version-->
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${compilerVersion}</source>
+					<target>${compilerVersion}</target>
 				</configuration>
 			</plugin>
 		</plugins>

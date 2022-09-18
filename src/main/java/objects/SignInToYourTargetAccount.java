@@ -1,5 +1,12 @@
 package objects;
 
+import static utils.DataMap.Email;
+import static utils.DataMap.Password;
+import static utils.DataMap.Title;
+import static utils.DataMap.URL;
+
+import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,7 +39,7 @@ public class SignInToYourTargetAccount {
 	@FindBy(xpath = "//span[text()='Sign in']")
 	WebElement signInElement;
 
-	private void getTitle(String expectedValue) { 
+	private void getTitle(String expectedValue) {
 		Assert.assertEquals(expectedValue, commons.getText(titleElement));
 		commons.getText(titleElement);
 	}
@@ -54,7 +61,8 @@ public class SignInToYourTargetAccount {
 		commons.click(signInElement);
 	}
 
-	public void signInToYourTargetAccountSteps(String expectedTitle, String expectedUrl, String email, String password) {
+	public void signInToYourTargetAccountSteps(String expectedTitle, String expectedUrl, String email,
+			String password) {
 		getTitle(expectedTitle);
 		getUrl(expectedUrl);
 		inputEmail(email);
@@ -62,11 +70,20 @@ public class SignInToYourTargetAccount {
 		clickSignIn3();
 
 	}
+
 	public void signInToYourTargetAccountSteps(SignInData signInData) {
 		getTitle(signInData.getExpectedTitle());
 		getUrl(signInData.getExpectedUrl());
 		inputEmail(signInData.getEmail());
 		inputPassword(signInData.getPassward());
+		clickSignIn3();
+	}
+
+	public void signInToYourTargetAccountSteps(Map<String, String> map) {
+		getTitle(map.get(Title.name()));
+		getUrl(map.get(URL.name()));
+		inputEmail(map.get(Email.getValue()));
+		inputPassword(map.get(Password.getValue()));
 		clickSignIn3();
 	}
 }

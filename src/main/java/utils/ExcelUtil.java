@@ -58,7 +58,6 @@ public class ExcelUtil {
 			}
 		}
 
-
 		data = new String[yRowsNumber][totalCellNumber];
 
 		int row = 0;
@@ -86,7 +85,7 @@ public class ExcelUtil {
 			for (int j = 0; j < sheet.getRow(0).getLastCellNum(); j++) {
 				try {
 					String key = sheet.getRow(0).getCell(j).getStringCellValue(); // header
-					String value = sheet.getRow(i).getCell(j).getStringCellValue();
+					String value = sheet.getRow(i).getCell(j).getStringCellValue();// cell value
 					map.put(key, value);
 				} catch (NullPointerException | IllegalStateException e) {
 				}
