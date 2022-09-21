@@ -4,15 +4,12 @@ import static utils.DataMap.Email;
 import static utils.DataMap.Password;
 import static utils.DataMap.Title;
 import static utils.DataMap.URL;
-
 import java.util.Map;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-
 import common.CommonFunctions;
 import utils.SignInData;
 
@@ -75,7 +72,7 @@ public class SignInToYourTargetAccount {
 		getTitle(signInData.getExpectedTitle());
 		getUrl(signInData.getExpectedUrl());
 		inputEmail(signInData.getEmail());
-		inputPassword(signInData.getPassward());
+		inputPassword(signInData.getPassword());
 		clickSignIn3();
 	}
 

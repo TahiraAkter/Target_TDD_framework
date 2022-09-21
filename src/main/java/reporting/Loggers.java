@@ -2,8 +2,8 @@ package reporting;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.testng.Reporter;
+import com.aventstack.extentreports.Status;
 
 public class Loggers {
 
@@ -14,6 +14,8 @@ public class Loggers {
 		logger.log(Level.INFO, msg);// this is from Java Console Log//It will show some INFO and msg
 
 		Reporter.log(msg + "<br>");// TestNG Reporter log
+
+		ExtentTestManager.getTest().log(Status.INFO, msg); // ExtentReport
 	}
 
 }

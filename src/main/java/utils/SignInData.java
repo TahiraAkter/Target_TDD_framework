@@ -26,7 +26,7 @@ public class SignInData {
 		return email;
 	}
 
-	public String getPassward() {
+	public String getPassword() {
 		return passward;
 	}
 
