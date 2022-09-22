@@ -29,7 +29,9 @@ import utils.ReadConfigFile;
 
 public class BaseClass {
 
-	public ReadConfigFile readConfigFile = new ReadConfigFile(null);
+	//public ReadConfigFile readConfigFile = new ReadConfigFile(null);
+	
+	public ReadConfigFile readConfigFile = ReadConfigFile.getInstance(); //for singleton
 	WebDriver driver;
 	WebDriverWait wait;
 	CommonWaits waits;
@@ -58,19 +60,23 @@ public class BaseClass {
 	@BeforeMethod
 	public void setUp(String browser1) {
 		driver = localDriver(browser1);
-		driver.get(readConfigFile.getReadConfigFile("url"));
+		driver.get(readConfigFile.get("url"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(
-				Duration.ofSeconds(Integer.parseInt(readConfigFile.getReadConfigFile("pageLoadWait"))));
+				Duration.ofSeconds(Integer.parseInt(readConfigFile.get("pageLoadWait"))));
 		driver.manage().timeouts()
-				.implicitlyWait(Duration.ofSeconds(Integer.parseInt(readConfigFile.getReadConfigFile("implicitWait"))));
+				.implicitlyWait(Duration.ofSeconds(Integer.parseInt(readConfigFile.get("implicitWait"))));
 		wait = new WebDriverWait(driver,
-				Duration.ofSeconds(Integer.parseInt(readConfigFile.getReadConfigFile("explicitWait"))));
+				Duration.ofSeconds(Integer.parseInt(readConfigFile.get("explicitWait"))));
 		initClasses();
 	}
 
 	@AfterMethod
 	public void afterEachTest(Method method, ITestResult result) {
+		for (String group: result.getMethod().getGroups()) {
+			ExtentTestManager.getTest().assignCategory(group);
+			
+		}
 		if (result.getStatus() == ITestResult.SUCCESS) {
 			ExtentTestManager.getTest().log(Status.PASS, "Test Passed");
 
@@ -79,7 +85,8 @@ public class BaseClass {
 
 		} else {
 			ExtentTestManager.getTest().log(Status.FAIL, "Test Failed \n"+ result.getThrowable());
-			commons.getScreenshot(method.getName());
+			ExtentTestManager.getTest().addScreenCaptureFromPath(commons.getScreenshot(method.getName()));
+			
 		}
 
 	}

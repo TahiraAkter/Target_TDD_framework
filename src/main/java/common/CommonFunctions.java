@@ -4,7 +4,6 @@ import java.io.File;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
@@ -94,11 +93,11 @@ public class CommonFunctions {
 		Date date = new Date();
 		SimpleDateFormat format = new SimpleDateFormat("MMddyyyy_hh.mm.ss");
 		String extension = format.format(date);
-		File file = new File("screenShots/" + testName + "_" + extension + ".png");
-		TakesScreenshot ss = (TakesScreenshot)driver;
+		File file = new File("screenshots/" + testName + "_" + extension + ".png");
+		TakesScreenshot ss = (TakesScreenshot)driver; //casting
 		File outPutFile = ss.getScreenshotAs(OutputType.FILE);
 		try {
-			Files.copy(outPutFile, file.getAbsoluteFile());
+			Files.copy(outPutFile, file.getAbsoluteFile()); // Files from google io
 			Loggers.getLog("Test has been failed \nScreenshot taken here ---> " + file.getAbsolutePath());
 		} catch (Exception e) {
 			e.printStackTrace();
